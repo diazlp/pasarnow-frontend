@@ -3,5 +3,14 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  daisyui: {
+    styled: true,
+    themes: ["halloween"],
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+  },
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
 };
