@@ -16,13 +16,14 @@ function DefaultContent() {
 
   useEffect(() => {
     dispatch(unmountAll());
-    dispatch(fetchAll(searchParams.get("search")));
+    // dispatch(fetchAll(searchParams.get("search")));
   }, [searchParams]);
 
-  const renderMobileCard = (content) => (
+  const renderMobileCard = (content, index) => (
     <div
       className="cursor-pointer"
       onClick={() => window.open(content.link, "_blank")}
+      key={index}
     >
       <div className="card w-full bg-accent">
         <div className="card-body">
@@ -33,8 +34,11 @@ function DefaultContent() {
     </div>
   );
 
-  const renderDefaultCard = (content) => (
-    <div className="card w-full bg-accent shadow-md shadow-secondary text-white">
+  const renderDefaultCard = (content, index) => (
+    <div
+      className="card w-full bg-accent shadow-sm shadow-secondary text-white"
+      key={index}
+    >
       <div className="card-body flex flex-row justify-between items-center">
         <div className="flex flex-col gap-2">
           <h2 className="card-title">{content.title}</h2>
@@ -66,8 +70,10 @@ function DefaultContent() {
 
   return (
     <>
-      {searchResult.map((result) => {
-        return isMobile ? renderMobileCard(result) : renderDefaultCard(result);
+      {searchResult.map((result, index) => {
+        return isMobile
+          ? renderMobileCard(result, index)
+          : renderDefaultCard(result, index);
       })}
     </>
   );

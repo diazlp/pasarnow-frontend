@@ -1,11 +1,11 @@
-import DefaultContent from "../components/DefaultContent";
 import NavigationBar from "../components/NavigationBar";
+import ImageContent from "../components/ImageContent";
 
 function SearchPage() {
   return (
     <div className="m-5 md:m-10 flex flex-col gap-5">
-      <NavigationBar logoColor="text-primary" />
-      <DefaultContent />
+      <NavigationBar logoColor="text-secondary" />
+      <ImageContent />
     </div>
   );
 }

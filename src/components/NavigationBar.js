@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import SearchBox from "./SearchBox";
 
-function NavigationBar() {
+function NavigationBar({ logoColor }) {
   const navigate = useNavigate();
 
   const isMobile = useMediaQuery({ query: `(max-width: 768px)` });
@@ -15,7 +15,7 @@ function NavigationBar() {
           className="prose select-none cursor-pointer"
           onClick={() => navigate("/")}
         >
-          <h1 className="text-2xl md:text-3xl font-bold text-primary">
+          <h1 className={`text-2xl md:text-3xl font-bold ${logoColor}`}>
             SearchParty
           </h1>
         </article>

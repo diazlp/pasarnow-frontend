@@ -3,14 +3,16 @@ import { useNavigate } from "react-router-dom";
 
 export default function SearchBox({ placeholder }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchType, setSearchType] = useState("default");
+  const [searchType, setSearchType] = useState("image");
 
   const navigate = useNavigate();
 
   const submitHandler = async (e) => {
     if (e.key === "Enter") {
       if (searchType === "default") {
-        navigate(`/default/?search=${searchTerm}`);
+        navigate(`/default?search=${searchTerm}`);
+      } else if (searchType === "image") {
+        navigate(`/image?search=${searchTerm}`);
       }
 
       setSearchTerm("");
