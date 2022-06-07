@@ -1,16 +1,11 @@
-import React from "react";
-import { useSearchParams } from "react-router-dom";
+import DefaultContent from "../components/DefaultContent";
 import NavigationBar from "../components/NavigationBar";
 
 function SearchPage() {
-  const [params] = useSearchParams();
-
-  console.log(params.get("search"), "<<<<<");
-
   return (
-    <div>
+    <div className="m-5 md:m-10 flex flex-col gap-5">
       <NavigationBar />
-      SearchPage
+      <DefaultContent />
     </div>
   );
 }

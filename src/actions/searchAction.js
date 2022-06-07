@@ -1,7 +1,13 @@
 import axios from "axios";
-import { FETCH_DEFAULT_SEARCH } from "./actionTypes";
+import { FETCH_DEFAULT_SEARCH, UNMOUNT_DEFAULT_SEARCH } from "./actionTypes";
 
 export const fetchImage = () => async (dispatch) => {};
+
+export const unmountAll = () => (dispatch) => {
+  dispatch({
+    type: UNMOUNT_DEFAULT_SEARCH,
+  });
+};
 
 export const fetchAll = (searchTerm) => async (dispatch) => {
   const { data } = await axios.get(
@@ -15,4 +21,9 @@ export const fetchAll = (searchTerm) => async (dispatch) => {
       },
     }
   );
+
+  dispatch({
+    type: FETCH_DEFAULT_SEARCH,
+    payload: data.results,
+  });
 };

@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -10,23 +9,9 @@ export default function SearchBox({ placeholder }) {
 
   const submitHandler = async (e) => {
     if (e.key === "Enter") {
-      // const { data } = await axios.get(
-      //   `https://google-search3.p.rapidapi.com/api/v1/search/q=${searchTerm}`,
-      //   {
-      //     headers: {
-      //       "X-User-Agent": "desktop",
-      //       "X-Proxy-Location": "SG",
-      //       "X-RapidAPI-Host": "google-search3.p.rapidapi.com",
-      //       "X-RapidAPI-Key":
-      //         "78d1284d4cmsh70c40a76d1a3c36p139354jsnb20955a3a89e",
-      //     },
-      //   }
-      // );
-
       if (searchType === "default") {
         navigate(`/default/?search=${searchTerm}`);
       }
-      // console.log(data);
 
       setSearchTerm("");
     }
