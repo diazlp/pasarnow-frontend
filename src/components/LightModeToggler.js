@@ -4,7 +4,8 @@ function LightModeToggler() {
       <input type="checkbox" />
 
       <svg
-        className="swap-on fill-current w-10 h-10 text-primary"
+        className="swap-on fill-current
+         w-6 sm:w-8 md:w-10 h-10 text-primary"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         onClick={() => localStorage.setItem("colormode", "emerald")}
@@ -13,7 +14,7 @@ function LightModeToggler() {
       </svg>
 
       <svg
-        className="swap-off fill-current w-10 h-10 text-secondary"
+        className="swap-off fill-current w-6 sm:w-8 md:w-10 h-10 text-secondary"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         onClick={() => localStorage.setItem("colormode", "halloween")}
