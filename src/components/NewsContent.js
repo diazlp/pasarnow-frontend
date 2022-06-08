@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useMediaQuery } from "react-responsive";
+// import { useMediaQuery } from "react-responsive";
 import { useSearchParams } from "react-router-dom";
 import { format } from "timeago.js";
-import { unmountAll, fetchNews, deleteNews } from "../actions/searchAction";
+import { fetchNews } from "../actions/searchAction";
+import { deleteNews, addNews } from "../actions/newsAction";
+import NewsForm from "./NewsForm";
 
 import NewsLoading from "./NewsLoading";
 
@@ -16,9 +18,14 @@ function NewsContent() {
   const { newsResult } = useSelector((state) => state.search);
 
   useEffect(() => {
-    dispatch(unmountAll());
-    dispatch(fetchNews(searchParams.get("search")));
+    if (!newsResult.length) {
+      dispatch(fetchNews(searchParams.get("search")));
+    }
   }, [searchParams]);
+
+  // useEffect(() => {
+  //   dispatch(unmountAll());
+  // }, [searchParams.get("search")]);
 
   if (!newsResult.length) {
     return (
@@ -32,7 +39,7 @@ function NewsContent() {
 
   const renderDefaultCard = (content, index) => (
     <div
-      className="card w-full lg:w-3/5 bg-gray-100 border-b-4 border-blue-500 text-gray-900 p-5 sm:p-5"
+      className="card bg-gray-100 border-b-4 border-blue-500 text-gray-900 p-5 sm:p-5"
       key={index}
     >
       <div className="flex flex-row justify-between">
@@ -85,9 +92,16 @@ function NewsContent() {
 
   return (
     <>
-      {newsResult.map((result, index) => {
-        return renderDefaultCard(result, index);
-      })}
+      <div className="flex flex-row gap-2">
+        <div className="flex flex-col w-full lg:w-3/5 gap-4">
+          {newsResult.map((result, index) => {
+            return renderDefaultCard(result, index);
+          })}
+        </div>
+        <div className="hidden w-2/5 lg:block mt-14">
+          <NewsForm />
+        </div>
+      </div>
     </>
   );
 

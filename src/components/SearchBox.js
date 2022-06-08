@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { unmountAll } from "../actions/searchAction";
 
 export default function SearchBox({ placeholder }) {
   const [searchTerm, setSearchTerm] = useState("");
+  const dispatch = useDispatch();
 
   const { searchType } = useSelector((state) => state.search);
 
@@ -20,6 +22,7 @@ export default function SearchBox({ placeholder }) {
       }
 
       setSearchTerm("");
+      dispatch(unmountAll());
     }
   };
 

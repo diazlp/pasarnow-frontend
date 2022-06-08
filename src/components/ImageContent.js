@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
-import { fetchImage, unmountAll } from "../actions/searchAction";
+import { fetchImage } from "../actions/searchAction";
 
 import ImageLoading from "./ImageLoading";
 
@@ -12,8 +12,7 @@ function ImageContent() {
   const { imageResult } = useSelector((state) => state.search);
 
   useEffect(() => {
-    dispatch(unmountAll());
-    // dispatch(fetchImage(searchParams.get("search")));
+    dispatch(fetchImage(searchParams.get("search")));
   }, [searchParams]);
 
   const renderImageCard = (content, index) => (

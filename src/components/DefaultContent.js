@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { useSearchParams } from "react-router-dom";
-import { fetchAll, unmountAll } from "../actions/searchAction";
+import { fetchAll } from "../actions/searchAction";
 
 import DefaultLoading from "./DefaultLoading";
 
@@ -15,8 +15,7 @@ function DefaultContent() {
   const { searchResult } = useSelector((state) => state.search);
 
   useEffect(() => {
-    dispatch(unmountAll());
-    // dispatch(fetchAll(searchParams.get("search")));
+    dispatch(fetchAll(searchParams.get("search")));
   }, [searchParams]);
 
   const renderMobileCard = (content, index) => (

@@ -4,6 +4,7 @@ import {
   FETCH_DEFAULT_SEARCH,
   FETCH_IMAGE,
   FETCH_NEWS,
+  ADD_NEWS,
   DELETE_NEWS,
 } from "../actions/actionTypes";
 
@@ -46,6 +47,12 @@ const searchReducer = (state = initialState, action) => {
       return {
         ...state,
         newsResult: action.payload,
+      };
+
+    case ADD_NEWS:
+      return {
+        ...state,
+        newsResult: [action.payload, ...state.newsResult],
       };
 
     case DELETE_NEWS:

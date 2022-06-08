@@ -5,7 +5,6 @@ import {
   FETCH_DEFAULT_SEARCH,
   FETCH_IMAGE,
   FETCH_NEWS,
-  DELETE_NEWS,
 } from "./actionTypes";
 
 export const selectSearch = (value) => (dispatch) => {
@@ -86,11 +85,4 @@ export const fetchNews = (searchTerm) => async (dispatch) => {
     type: FETCH_NEWS,
     payload,
   });
-};
-
-export const deleteNews = (id) => {
-  return {
-    type: DELETE_NEWS,
-    payload: id,
-  };
 };
