@@ -33,6 +33,12 @@ function NewsForm() {
       setDuplicateError(response);
     } else {
       setDuplicateError("");
+
+      setNewsForm({
+        title: "",
+        publisher: "",
+        url: "",
+      });
     }
   };
 
