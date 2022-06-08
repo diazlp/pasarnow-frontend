@@ -3,12 +3,15 @@ import {
   UNMOUNT_DEFAULT_SEARCH,
   FETCH_DEFAULT_SEARCH,
   FETCH_IMAGE,
+  FETCH_NEWS,
+  DELETE_NEWS,
 } from "../actions/actionTypes";
 
 const initialState = {
   searchType: "default",
   searchResult: [],
   imageResult: [],
+  newsResult: [],
 };
 
 const searchReducer = (state = initialState, action) => {
@@ -24,6 +27,7 @@ const searchReducer = (state = initialState, action) => {
         ...state,
         searchResult: [],
         imageResult: [],
+        newsResult: [],
       };
 
     case FETCH_DEFAULT_SEARCH:
@@ -36,6 +40,20 @@ const searchReducer = (state = initialState, action) => {
       return {
         ...state,
         imageResult: action.payload,
+      };
+
+    case FETCH_NEWS:
+      return {
+        ...state,
+        newsResult: action.payload,
+      };
+
+    case DELETE_NEWS:
+      return {
+        ...state,
+        newsResult: state.newsResult.filter(
+          (news) => news.id !== action.payload
+        ),
       };
 
     default:

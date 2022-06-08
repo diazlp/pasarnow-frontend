@@ -1,15 +1,9 @@
-import { useEffect } from "react";
-
 import LightToggler from "../components/LightModeToggler";
 import MainLogo from "../components/MainLogo";
 import SearchBox from "../components/SearchBox";
 import SearchType from "../components/SearchType";
 
 function HomePage() {
-  useEffect(() => {
-    localStorage.setItem("colormode", "halloween");
-  }, []);
-
   return (
     <div className="m-10">
       <div className="flex flex-row justify-between items-center">

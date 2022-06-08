@@ -4,6 +4,8 @@ import {
   UNMOUNT_DEFAULT_SEARCH,
   FETCH_DEFAULT_SEARCH,
   FETCH_IMAGE,
+  FETCH_NEWS,
+  DELETE_NEWS,
 } from "./actionTypes";
 
 export const selectSearch = (value) => (dispatch) => {
@@ -55,4 +57,40 @@ export const fetchImage = (searchTerm) => async (dispatch) => {
     type: FETCH_IMAGE,
     payload: data.image_results,
   });
+};
+
+export const fetchNews = (searchTerm) => async (dispatch) => {
+  const { data } = await axios.get(
+    `https://google-search3.p.rapidapi.com/api/v1/news/q=${searchTerm}`,
+    {
+      headers: {
+        "X-User-Agent": "desktop",
+        "X-Proxy-Location": "SG",
+        "X-RapidAPI-Host": "google-search3.p.rapidapi.com",
+        "X-RapidAPI-Key": "78d1284d4cmsh70c40a76d1a3c36p139354jsnb20955a3a89e",
+      },
+    }
+  );
+
+  let payload = data.entries
+    .slice(0, 6)
+    .map((result) => ({
+      id: result.id,
+      title: result.title,
+      published: result.published,
+      link: result.link,
+    }))
+    .sort((a, b) => new Date(b.published) - new Date(a.published));
+
+  dispatch({
+    type: FETCH_NEWS,
+    payload,
+  });
+};
+
+export const deleteNews = (id) => {
+  return {
+    type: DELETE_NEWS,
+    payload: id,
+  };
 };
