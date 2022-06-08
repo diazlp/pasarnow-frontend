@@ -40,4 +40,30 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    var originalSetItem = localStorage.setItem;
+
+    localStorage.setItem = function (key, value) {
+      var event = new Event("itemInserted");
+
+      event.value = value; // Optional..
+      event.key = key; // Optional..
+
+      document.dispatchEvent(event);
+
+      originalSetItem.apply(this, arguments);
+    };
+
+    var localStorageSetHandler = function (e) {
+      // alert('localStorage.set("' + e.key + '", "' + e.value + '") was called');
+      document.documentElement.setAttribute(
+        "data-theme",
+        localStorage.getItem("colormode")
+      );
+    };
+
+    document.addEventListener("itemInserted", localStorageSetHandler, false);
+
+    // console.log(localStorage.getItem("ok"));
+  </script>
 </html>

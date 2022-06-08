@@ -5,7 +5,7 @@ module.exports = {
   },
   daisyui: {
     styled: true,
-    themes: ["halloween"],
+    themes: ["halloween", "emerald"],
     base: true,
     utils: true,
     logs: true,
