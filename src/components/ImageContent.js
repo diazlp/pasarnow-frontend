@@ -13,7 +13,7 @@ function ImageContent() {
 
   useEffect(() => {
     dispatch(unmountAll());
-    dispatch(fetchImage(searchParams.get("search")));
+    // dispatch(fetchImage(searchParams.get("search")));
   }, [searchParams]);
 
   const renderImageCard = (content, index) => (

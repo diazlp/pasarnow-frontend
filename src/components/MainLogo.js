@@ -1,6 +1,6 @@
 function MainLogo() {
   return (
-    <article className="prose select-none">
+    <article className="prose">
       <h1 className="font-bold">SearchParty</h1>
     </article>
   );

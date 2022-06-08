@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export default function SearchBox({ placeholder }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchType, setSearchType] = useState("image");
+
+  const { searchType } = useSelector((state) => state.search);
 
   const navigate = useNavigate();
 
@@ -11,8 +13,10 @@ export default function SearchBox({ placeholder }) {
     if (e.key === "Enter") {
       if (searchType === "default") {
         navigate(`/default?search=${searchTerm}`);
-      } else if (searchType === "image") {
+      } else if (searchType === "images") {
         navigate(`/image?search=${searchTerm}`);
+      } else if (searchType === "news") {
+        navigate(`/news?search=${searchTerm}`);
       }
 
       setSearchTerm("");

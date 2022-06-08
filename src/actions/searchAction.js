@@ -1,9 +1,17 @@
 import axios from "axios";
 import {
+  SELECT_SEARCH_TYPE,
   UNMOUNT_DEFAULT_SEARCH,
   FETCH_DEFAULT_SEARCH,
   FETCH_IMAGE,
 } from "./actionTypes";
+
+export const selectSearch = (value) => (dispatch) => {
+  dispatch({
+    type: SELECT_SEARCH_TYPE,
+    payload: value,
+  });
+};
 
 export const unmountAll = () => (dispatch) => {
   dispatch({

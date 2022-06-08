@@ -1,16 +1,24 @@
 import {
+  SELECT_SEARCH_TYPE,
+  UNMOUNT_DEFAULT_SEARCH,
   FETCH_DEFAULT_SEARCH,
   FETCH_IMAGE,
-  UNMOUNT_DEFAULT_SEARCH,
 } from "../actions/actionTypes";
 
 const initialState = {
+  searchType: "default",
   searchResult: [],
   imageResult: [],
 };
 
 const searchReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SELECT_SEARCH_TYPE:
+      return {
+        ...state,
+        searchType: action.payload,
+      };
+
     case UNMOUNT_DEFAULT_SEARCH:
       return {
         ...state,
