@@ -14,4 +14,4 @@ To be specific, I'm using:
 - _React Responsive_
 - And, _timeago.js_
 
-## On the side note: I completed all of the Specification and Plus point
+### NB: I completed all of the `specification` and `plus point`
