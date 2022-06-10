@@ -28,7 +28,7 @@ export const fetchAll = (searchTerm) => async (dispatch) => {
         "X-User-Agent": "desktop",
         "X-Proxy-Location": "SG",
         "X-RapidAPI-Host": "google-search3.p.rapidapi.com",
-        "X-RapidAPI-Key": "78d1284d4cmsh70c40a76d1a3c36p139354jsnb20955a3a89e",
+        "X-RapidAPI-Key": "a0d217071dmsh6bd1406a267622ap10872djsnf329aff3e3f7",
       },
     }
   );
@@ -47,7 +47,7 @@ export const fetchImage = (searchTerm) => async (dispatch) => {
         "X-User-Agent": "desktop",
         "X-Proxy-Location": "SG",
         "X-RapidAPI-Host": "google-search3.p.rapidapi.com",
-        "X-RapidAPI-Key": "78d1284d4cmsh70c40a76d1a3c36p139354jsnb20955a3a89e",
+        "X-RapidAPI-Key": "a0d217071dmsh6bd1406a267622ap10872djsnf329aff3e3f7",
       },
     }
   );
@@ -66,7 +66,7 @@ export const fetchNews = (searchTerm) => async (dispatch) => {
         "X-User-Agent": "desktop",
         "X-Proxy-Location": "SG",
         "X-RapidAPI-Host": "google-search3.p.rapidapi.com",
-        "X-RapidAPI-Key": "78d1284d4cmsh70c40a76d1a3c36p139354jsnb20955a3a89e",
+        "X-RapidAPI-Key": "a0d217071dmsh6bd1406a267622ap10872djsnf329aff3e3f7",
       },
     }
   );

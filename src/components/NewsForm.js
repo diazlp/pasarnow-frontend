@@ -44,8 +44,10 @@ function NewsForm() {
 
   return (
     <div className="px-4 sticky top-14" data-testid="news-form">
-      <div className="card bg-gray-100 relative p-8 sm:p-12 shadow-xl">
-        <p className="text-xl font-bold text-center mb-8">Add More News!</p>
+      <div className="card bg-gray-100 relative p-8 sm:p-12 shadow-xl text-black">
+        <p className="text-xl font-bold text-center mb-8 text-black">
+          Add More News!
+        </p>
         <form onSubmit={formSubmitHandler}>
           <div className="mb-6">
             <input
