@@ -14,7 +14,7 @@ import { act } from "react-dom/test-utils";
 
 jest.setTimeout(20000);
 
-describe("DefaultContent unit testing", () => {
+describe.skip("DefaultContent unit testing", () => {
   it("renders DefaultContent Loading on component mount", () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(

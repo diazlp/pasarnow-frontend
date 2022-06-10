@@ -24,7 +24,7 @@ beforeEach(() => {
   cleanup();
 });
 
-describe("ImageContent unit testing", () => {
+describe.skip("ImageContent unit testing", () => {
   it("renders ImageContent Loading on component mount", () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(

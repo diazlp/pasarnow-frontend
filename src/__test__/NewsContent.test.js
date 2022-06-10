@@ -25,7 +25,7 @@ beforeEach(() => {
   cleanup();
 });
 
-describe("NewsContent unit testing", () => {
+describe.skip("NewsContent unit testing", () => {
   it("renders NewsContent Loading on component mount", () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
