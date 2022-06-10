@@ -15,7 +15,9 @@ function NewsContent() {
   const { newsResult } = useSelector((state) => state.search);
 
   useEffect(() => {
-    dispatch(fetchNews(searchParams.get("search")));
+    if (!newsResult.length) {
+      dispatch(fetchNews(searchParams.get("search")));
+    }
   }, [searchParams]);
 
   if (!newsResult.length) {

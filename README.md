@@ -14,4 +14,8 @@ To be specific, I'm using:
 - _React Responsive_
 - And, _timeago.js_
 
-### PS: I completed all of the `specification` and `plus point`
+**Here's the live server URL: [searchparty-dzapp (FIREBASE)](https://searchparty-dzapp.firebaseapp.com/)**
+
+### PS: I completed all of the `Specification` and `Plus Point`
+
+![test-result](testAll-result.JPG)
