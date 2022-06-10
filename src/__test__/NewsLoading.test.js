@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import NewsLoading from "./NewsLoading";
+import NewsLoading from "../components/NewsLoading";
 
 describe("NewsLoading unit testing", () => {
   it("renders NewsLoading on component mount", () => {

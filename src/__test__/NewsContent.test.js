@@ -15,7 +15,7 @@ import {
 import thunk from "redux-thunk";
 import rootReducer from "../reducer/rootReducer";
 import { act } from "react-dom/test-utils";
-import NewsContent from "./NewsContent";
+import NewsContent from "../components/NewsContent";
 import { fetchNews } from "../actions/searchAction";
 import { deleteNews } from "../actions/newsAction";
 

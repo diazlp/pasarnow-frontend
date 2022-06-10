@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import LightModeToggler from "./LightModeToggler";
+import LightModeToggler from "../components/LightModeToggler";
 
 describe("LightModeToggler unit testing", () => {
   it("renders LightModeToggler on component mount", () => {

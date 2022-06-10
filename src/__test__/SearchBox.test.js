@@ -1,5 +1,4 @@
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
-import SearchBox from "./SearchBox";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import {
@@ -8,9 +7,10 @@ import {
   compose,
 } from "redux";
 import thunk from "redux-thunk";
-import rootReducer from "../reducer/rootReducer";
 import { selectSearch, unmountAll } from "../actions/searchAction";
 import { act } from "react-dom/test-utils";
+import rootReducer from "../reducer/rootReducer";
+import SearchBox from "../components/SearchBox";
 
 beforeEach(cleanup);
 

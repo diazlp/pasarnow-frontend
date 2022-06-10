@@ -1,4 +1,10 @@
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import {
+  render,
+  screen,
+  waitFor,
+  cleanup,
+  fireEvent,
+} from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import {
@@ -8,66 +14,70 @@ import {
 } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "../reducer/rootReducer";
-import DefaultContent from "./DefaultContent";
-import { fetchAll } from "../actions/searchAction";
+import ImageContent from "../components/ImageContent";
+import { fetchImage } from "../actions/searchAction";
 import { act } from "react-dom/test-utils";
 
 jest.setTimeout(20000);
 
-describe("DefaultContent unit testing", () => {
-  it("renders DefaultContent Loading on component mount", () => {
+beforeEach(() => {
+  cleanup();
+});
+
+describe("ImageContent unit testing", () => {
+  it("renders ImageContent Loading on component mount", () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>
         <Provider store={store}>
-          <DefaultContent />
+          <ImageContent />
         </Provider>
       </Router>
     );
 
-    expect(screen.getAllByTestId("default-loading")).toBeTruthy();
+    expect(screen.getAllByTestId("image-loading")).toBeTruthy();
   });
 
-  it("renders DefaultContent on search action All dispatch", async () => {
+  it("renders ImageContent on search action All dispatch", async () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>
         <Provider store={store}>
-          <DefaultContent />
+          <ImageContent />
         </Provider>
       </Router>
     );
 
     await act(async () => {
-      await store.dispatch(fetchAll("hello"));
+      await store.dispatch(fetchImage("hello"));
     });
 
     await waitFor(
       () => {
-        expect(screen.queryAllByTestId("default-content")).toBeTruthy();
+        expect(screen.queryAllByTestId("image-content")).toBeTruthy();
       },
       {
-        timeout: 20000,
+        timeout: 10000,
       }
     );
   });
 
-  it("opens a new tab on Visit button click", async () => {
+  it("opens a new tab on Card Image click", async () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>
         <Provider store={store}>
-          <DefaultContent />
+          <ImageContent />
         </Provider>
       </Router>
     );
 
     await act(async () => {
-      await store.dispatch(fetchAll("hello"));
+      await store.dispatch(fetchImage("hello"));
     });
 
     await waitFor(() => {
-      fireEvent.click(screen.getAllByTestId("desktop-click")[0]);
+      fireEvent.click(screen.getAllByTestId("image-content")[0]);
     });
   });
 });

@@ -1,5 +1,4 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import SearchType from "./SearchType";
 import { Provider } from "react-redux";
 import {
   legacy_createStore as createStore,
@@ -7,6 +6,7 @@ import {
   compose,
 } from "redux";
 import thunk from "redux-thunk";
+import SearchType from "../components/SearchType";
 import rootReducer from "../reducer/rootReducer";
 
 describe("SearchType unit testing", () => {

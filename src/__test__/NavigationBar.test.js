@@ -1,9 +1,9 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import NavigationBar from "./NavigationBar";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { legacy_createStore as createStore } from "redux";
 import rootReducer from "../reducer/rootReducer";
+import NavigationBar from "../components/NavigationBar";
 
 describe("NavigationBar unit testing", () => {
   it("renders NavigationBar on component mount", () => {

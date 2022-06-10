@@ -8,7 +8,7 @@ import {
 } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "../reducer/rootReducer";
-import NewsForm from "./NewsForm";
+import NewsForm from "../components/NewsForm";
 import { addNews } from "../actions/newsAction";
 
 describe("NewsForm unit testing", () => {
