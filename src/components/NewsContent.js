@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { format } from "timeago.js";
 import { fetchNews } from "../actions/searchAction";
-import { deleteNews, addNews } from "../actions/newsAction";
+import { deleteNews } from "../actions/newsAction";
 import NewsForm from "./NewsForm";
 
 import NewsLoading from "./NewsLoading";
