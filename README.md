@@ -18,4 +18,8 @@ To be specific, I'm using:
 
 ### PS: I completed all of the `Specification` and `Plus Point`
 
+
+![Wakatime](Wakatime-Duration.JPG)
+
 ![test-result](testAll-result.JPG)
+
