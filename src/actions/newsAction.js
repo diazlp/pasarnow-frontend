@@ -1,4 +1,3 @@
-import axios from "axios";
 import { ADD_NEWS, DELETE_NEWS } from "./actionTypes";
 
 export const addNews = (payload) => (dispatch, getState) => {

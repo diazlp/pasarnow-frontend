@@ -11,19 +11,17 @@ export default function SearchBox({ placeholder }) {
 
   const navigate = useNavigate();
 
-  const submitHandler = async (e) => {
-    if (e.key === "Enter") {
-      if (searchType === "default") {
-        navigate(`/default?search=${searchTerm}`);
-      } else if (searchType === "images") {
-        navigate(`/image?search=${searchTerm}`);
-      } else if (searchType === "news") {
-        navigate(`/news?search=${searchTerm}`);
-      }
-
-      setSearchTerm("");
-      dispatch(unmountAll());
+  const submitHandler = () => {
+    if (searchType === "default") {
+      navigate(`/default?search=${searchTerm}`);
+    } else if (searchType === "images") {
+      navigate(`/image?search=${searchTerm}`);
+    } else if (searchType === "news") {
+      navigate(`/news?search=${searchTerm}`);
     }
+
+    setSearchTerm("");
+    dispatch(unmountAll());
   };
 
   return (
@@ -34,7 +32,8 @@ export default function SearchBox({ placeholder }) {
         className="input input-bordered input-sm w-full md:input-md md:max-w-md"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        onKeyDown={(e) => submitHandler(e)}
+        onKeyDown={(e) => e.key === "Enter" && submitHandler()}
+        data-testid="search-input"
       />
     </>
   );

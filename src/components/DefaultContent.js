@@ -23,6 +23,7 @@ function DefaultContent() {
       className="cursor-pointer"
       onClick={() => window.open(content.link, "_blank")}
       key={index}
+      data-testid="mobile-click"
     >
       <div className="card w-full bg-accent">
         <div className="card-body">
@@ -37,6 +38,7 @@ function DefaultContent() {
     <div
       className="card w-full bg-accent shadow-sm shadow-secondary text-white"
       key={index}
+      data-testid="default-content"
     >
       <div className="card-body flex flex-row justify-between items-center">
         <div className="flex flex-col gap-2">
@@ -48,6 +50,7 @@ function DefaultContent() {
           <button
             className="btn btn-primary"
             onClick={() => window.open(content.link, "_blank")}
+            data-testid="desktop-click"
           >
             Visit
           </button>

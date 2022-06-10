@@ -1,6 +1,6 @@
 function DefaultLoading() {
   return (
-    <div>
+    <div data-testid="default-loading">
       <div className="card w-full bg-accent shadow-md shadow-secondary text-white">
         <div className="card-body flex flex-row justify-between items-center">
           <div className="flex flex-col gap-2">

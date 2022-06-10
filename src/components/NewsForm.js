@@ -43,7 +43,7 @@ function NewsForm() {
   };
 
   return (
-    <div className="px-4 sticky top-14">
+    <div className="px-4 sticky top-14" data-testid="news-form">
       <div className="card bg-gray-100 relative p-8 sm:p-12 shadow-xl">
         <p className="text-xl font-bold text-center mb-8">Add More News!</p>
         <form onSubmit={formSubmitHandler}>
@@ -55,6 +55,7 @@ function NewsForm() {
               value={newsForm.title}
               name="title"
               onChange={(e) => onChangeHandler(e)}
+              data-testid="title-input"
             />
           </div>
           <div className="mb-6">
@@ -65,6 +66,7 @@ function NewsForm() {
               value={newsForm.publisher}
               name="publisher"
               onChange={(e) => onChangeHandler(e)}
+              data-testid="source-input"
             />
           </div>
           <div className={`${duplicateError ? "mb-2" : "mb-6"}`}>
@@ -75,6 +77,7 @@ function NewsForm() {
               value={newsForm.url}
               name="url"
               onChange={(e) => onChangeHandler(e)}
+              data-testid="url-input"
             />
           </div>
           <div

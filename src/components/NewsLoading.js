@@ -1,6 +1,9 @@
 function NewsLoading() {
   return (
-    <div className="card w-full lg:w-3/5 bg-gray-100 border-b-4 border-blue-500 text-gray-900 p-5">
+    <div
+      className="card w-full lg:w-3/5 bg-gray-100 border-b-4 border-blue-500 text-gray-900 p-5"
+      data-testid="news-loading"
+    >
       <div className="flex flex-row justify-between">
         <div className="flex flex-row gap-1 items-center bg-gray-400 opacity-20 animate-pulse w-[100px] md:w-[200px] h-8 rounded-2xl"></div>
         <button>

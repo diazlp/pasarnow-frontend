@@ -15,9 +15,7 @@ function NewsContent() {
   const { newsResult } = useSelector((state) => state.search);
 
   useEffect(() => {
-    if (!newsResult.length) {
-      dispatch(fetchNews(searchParams.get("search")));
-    }
+    dispatch(fetchNews(searchParams.get("search")));
   }, [searchParams]);
 
   if (!newsResult.length) {
@@ -48,7 +46,11 @@ function NewsContent() {
             {content.title?.split("-")[1]}
           </p>
         </div>
-        <button onClick={() => dispatch(deleteNews(content.id))}>
+        <button
+          onClick={() => dispatch(deleteNews(content.id))}
+          id={content.id}
+          data-testid="delete-news"
+        >
           <svg
             className="h-4 w-4 md:h-6 md:w-6 text-red-600"
             viewBox="0 0 24 24"
@@ -67,6 +69,7 @@ function NewsContent() {
         <div
           className="link link-hover card-title text-sm sm:text-lg"
           onClick={() => window.open(content.link, "_blank")}
+          data-testid="news-title"
         >
           {content.title?.split("-")[0]}
         </div>
@@ -85,7 +88,7 @@ function NewsContent() {
 
   return (
     <>
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-2" data-testid="news-content">
         <div className="flex flex-col w-full lg:w-3/5 gap-4">
           {newsResult.map((result, index) => {
             return renderDefaultCard(result, index);

@@ -20,6 +20,7 @@ function ImageContent() {
       className="card w-96 bg-base-100 shadow-xl cursor-pointer"
       onClick={() => window.open(content.link?.href, "_blank")}
       key={index}
+      data-testid="image-content"
     >
       <figure>
         <img
@@ -30,7 +31,6 @@ function ImageContent() {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{content.link?.title}</h2>
-        <p>{content.image?.alt ? content.image?.alt : <></>}</p>
       </div>
     </div>
   );
