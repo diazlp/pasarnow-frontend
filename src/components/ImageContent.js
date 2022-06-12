@@ -30,7 +30,8 @@ function ImageContent() {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{content.link?.title}</h2>
+        <h2 className="card-title text-md">{content.link?.title}</h2>
+        <p className="text-gray-500 text-sm">{content.link?.domain}</p>
       </div>
     </div>
   );

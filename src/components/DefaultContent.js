@@ -25,10 +25,11 @@ function DefaultContent() {
       key={index}
       data-testid="mobile-click"
     >
-      <div className="card w-full bg-accent">
+      <div className="card w-full text-gray-900 shadow-md bg-white">
         <div className="card-body">
-          <h2 className="card-title">{content.title}</h2>
-          <p>{content.description}</p>
+          <h2 className="card-title text-[20px] font-bold">{content.title}</h2>
+          <p className="text-[16px] truncate">{content.description}</p>
+          <p className="text-gray-500 text-[14px]">{content.link}</p>
         </div>
       </div>
     </div>
@@ -36,14 +37,15 @@ function DefaultContent() {
 
   const renderDefaultCard = (content, index) => (
     <div
-      className="card w-full bg-accent shadow-sm shadow-secondary text-white"
+      className="card w-full shadow-md text-gray-900"
       key={index}
       data-testid="default-content"
     >
-      <div className="card-body flex flex-row justify-between items-center">
-        <div className="flex flex-col gap-2">
-          <h2 className="card-title">{content.title}</h2>
+      <div className="card-body flex flex-row justify-between items-center bg-white">
+        <div className="flex flex-col gap-1">
+          <h2 className="card-title font-bold">{content.title}</h2>
           <p>{content.description}</p>
+          <p className="text-gray-500 text-sm">{content.link}</p>
         </div>
 
         <div className="card-actions justify-end">
