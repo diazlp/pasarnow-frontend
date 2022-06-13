@@ -12,7 +12,7 @@ import NewsForm from "../components/NewsForm";
 import { addNews } from "../actions/newsAction";
 
 describe("NewsForm unit testing", () => {
-  it("renders NewsForm on component mount", () => {
+  it("should render NewsForm on component mount", () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
     render(

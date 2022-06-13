@@ -26,7 +26,7 @@ beforeEach(() => {
 });
 
 describe("NewsContent unit testing", () => {
-  it("renders NewsContent Loading on component mount", () => {
+  it("should render NewsContent Loading on component mount", () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>
@@ -39,7 +39,7 @@ describe("NewsContent unit testing", () => {
     expect(screen.getAllByTestId("news-loading")).toBeTruthy();
   });
 
-  it("renders NewsContent on search action All dispatch", async () => {
+  it("should render NewsContent on search action All dispatch", async () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>
@@ -63,7 +63,7 @@ describe("NewsContent unit testing", () => {
     );
   });
 
-  it("opens a new tab on News Title click", async () => {
+  it("should open a new tab on News Title click", async () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>
@@ -82,7 +82,7 @@ describe("NewsContent unit testing", () => {
     });
   });
 
-  it("delete a News from list", async () => {
+  it("should delete a News from list", async () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>

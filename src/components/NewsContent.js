@@ -96,13 +96,13 @@ function NewsContent() {
             return renderDefaultCard(result, index);
           })}
         </div>
-        <div className="hidden lg:block w-2/5  mt-14">
+        <div className="hidden lg:block w-2/5 mt-14">
           <NewsForm />
         </div>
         <div className="lg:hidden fixed bottom-5 right-5">
           <label
             htmlFor="my-modal-4"
-            className="btn modal-button p-0 w-12 h-12 bg-blue-500 rounded-full hover:bg-blue-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none"
+            className="btn modal-button p-0 w-12 h-12 bg-blue-500 rounded-full hover:bg-blue-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none border-none"
           >
             <svg
               viewBox="0 0 20 20"

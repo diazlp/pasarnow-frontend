@@ -10,7 +10,7 @@ import SearchType from "../components/SearchType";
 import rootReducer from "../reducer/rootReducer";
 
 describe("SearchType unit testing", () => {
-  it("renders SearchType on component mount", () => {
+  it("should render SearchType on component mount", () => {
     const store = createStore(rootReducer);
     render(
       <Provider store={store}>

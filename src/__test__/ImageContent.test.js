@@ -25,7 +25,7 @@ beforeEach(() => {
 });
 
 describe("ImageContent unit testing", () => {
-  it("renders ImageContent Loading on component mount", () => {
+  it("should render ImageContent Loading on component mount", () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>

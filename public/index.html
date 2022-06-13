@@ -55,11 +55,12 @@
     };
 
     var localStorageSetHandler = function (e) {
-      // alert('localStorage.set("' + e.key + '", "' + e.value + '") was called');
-      document.documentElement.setAttribute(
-        "data-theme",
-        localStorage.getItem("colormode")
-      );
+      if (e.key === "colormode") {
+        document.documentElement.setAttribute(
+          "data-theme",
+          localStorage.getItem("colormode")
+        );
+      }
     };
 
     document.addEventListener("itemInserted", localStorageSetHandler, false);

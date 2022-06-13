@@ -13,7 +13,7 @@ import NewsPage from "../views/NewsPage";
 describe("NewsPage integration test", () => {
   const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
-  it("renders NewsPage", () => {
+  it("should render NewsPage", () => {
     render(
       <Router>
         <Provider store={store}>

@@ -15,7 +15,7 @@ import SearchBox from "../components/SearchBox";
 beforeEach(cleanup);
 
 describe.only("SearchBox unit testing", () => {
-  it("renders SearchBox on component mount", () => {
+  it("should render SearchBox on component mount", () => {
     const store = createStore(rootReducer);
 
     render(

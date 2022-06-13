@@ -6,7 +6,7 @@ import rootReducer from "../reducer/rootReducer";
 import NavigationBar from "../components/NavigationBar";
 
 describe("NavigationBar unit testing", () => {
-  it("renders NavigationBar on component mount", () => {
+  it("should render NavigationBar on component mount", () => {
     const store = createStore(rootReducer);
 
     render(

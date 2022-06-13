@@ -15,7 +15,7 @@ import { act } from "react-dom/test-utils";
 jest.setTimeout(20000);
 
 describe("DefaultContent unit testing", () => {
-  it("renders DefaultContent Loading on component mount", () => {
+  it("should render DefaultContent Loading on component mount", () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>
@@ -28,7 +28,7 @@ describe("DefaultContent unit testing", () => {
     expect(screen.getAllByTestId("default-loading")).toBeTruthy();
   });
 
-  it("renders DefaultContent on search action All dispatch", async () => {
+  it("should render DefaultContent on search action All dispatch", async () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>
@@ -52,7 +52,7 @@ describe("DefaultContent unit testing", () => {
     );
   });
 
-  it("opens a new tab on Visit button click", async () => {
+  it("should open a new tab on Visit button click", async () => {
     const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
     render(
       <Router>

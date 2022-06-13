@@ -13,7 +13,7 @@ import SearchPage from "../views/SearchPage";
 describe("SearchPage integration test", () => {
   const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
-  it("renders SearchPage", () => {
+  it("should render SearchPage", () => {
     render(
       <Router>
         <Provider store={store}>

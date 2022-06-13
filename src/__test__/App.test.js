@@ -6,7 +6,7 @@ import rootReducer from "../reducer/rootReducer";
 import App from "../App";
 
 describe("React App integration test", () => {
-  it("renders without crashing", () => {
+  it("should render the app without crashing", () => {
     const store = createStore(rootReducer);
 
     render(

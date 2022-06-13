@@ -13,7 +13,7 @@ import ImagePage from "../views/ImagePage";
 describe("ImagePage integration test", () => {
   const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
-  it("renders ImagePage", () => {
+  it("should render ImagePage", () => {
     render(
       <Router>
         <Provider store={store}>
