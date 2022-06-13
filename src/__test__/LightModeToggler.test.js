@@ -14,7 +14,7 @@ describe("LightModeToggler unit testing", () => {
 
     fireEvent.click(darkToggler);
 
-    expect(localStorage.getItem("colormode")).toBe("halloween");
+    expect(localStorage.getItem("colormode")).toBe("emerald");
   });
 
   it("should change the screen to light mode", () => {
@@ -24,6 +24,6 @@ describe("LightModeToggler unit testing", () => {
 
     fireEvent.click(lightToggler);
 
-    expect(localStorage.getItem("colormode")).toBe("emerald");
+    expect(localStorage.getItem("colormode")).toBe("halloween");
   });
 });
